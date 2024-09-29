@@ -34,13 +34,16 @@ export default function TentangKami() {
     }, [isFocused]);
 
     const __getTransaction = () => {
-        getData('user').then(res => {
-            setUser(res);
+        getData('user').then(u => {
+            setUser(u);
+            axios.post(apiURL + 'get_petunjuk', {
+                level: u.level
+            }).then(res => {
+                console.log(res.data[0]);
+                setDataPDF(res.data[0]);
+            })
         })
-        axios.post(apiURL + 'get_petunjuk').then(res => {
-            console.log(res.data[0]);
-            setDataPDF(res.data[0]);
-        })
+
     }
 
     const MyList = ({ label, value }) => {
@@ -146,7 +149,7 @@ export default function TentangKami() {
                 }} />
             </View>}
 
-            {user.level == 'Petugas' && !buka && <TouchableOpacity onPress={() => setBuka(true)} style={{
+            {/* {user.level == 'Petugas' && !buka && <TouchableOpacity onPress={() => setBuka(true)} style={{
                 width: 60,
                 height: 60,
                 position: 'absolute',
@@ -159,7 +162,7 @@ export default function TentangKami() {
             }}>
                 <Icon type='ionicon' name='cloud-upload' color={colors.white} />
             </TouchableOpacity>
-            }
+            } */}
         </SafeAreaView>
     )
 }

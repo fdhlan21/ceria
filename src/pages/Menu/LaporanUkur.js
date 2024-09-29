@@ -71,6 +71,7 @@ export default function laporanUkur({ navigation, route }) {
                             { label: 'Gizi Baik', value: 'Gizi Baik' },
                             { label: 'Beresiko Gizi Berlebih', value: 'Beresiko Gizi Berlebih' },
                             { label: 'Gizi Berlebih', value: 'Gizi Berlebih' },
+                            { label: 'Obesitas', value: 'Obesitas' },
 
                         ]} onValueChange={x => setKirim({ ...kirim, status_gizi: x })} />
 
@@ -87,7 +88,7 @@ export default function laporanUkur({ navigation, route }) {
                                 flex: 1,
                                 paddingRight: 10,
                             }}>
-                                <MyCalendar onDateChange={x => setKirim({ ...kirim, awal: x })} value={kirim.awal} label="Sampai" />
+                                <MyCalendar onDateChange={x => setKirim({ ...kirim, akhir: x })} value={kirim.akhir} label="Sampai" />
                             </View>
                         </View>
                         <MyGap jarak={10} />

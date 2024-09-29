@@ -25,6 +25,7 @@ import MyLoading from '../../components/MyLoading';
 
 export default function ProgramEdit({ navigation, route }) {
 
+    console.log(route.params);
 
     const [kirim, setKirim] = useState(route.params);
     const [loading, setLoading] = useState(false);

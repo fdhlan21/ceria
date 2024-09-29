@@ -63,11 +63,15 @@ export default function InformasiDetail({ navigation, route }) {
                     }}
                 />
                 <MyGap jarak={10} />
-                <YoutubePlayer
-                    height={windowWidth}
-                    videoId={item.link_youtube}
+                {item.link_youtube.length > 0 &&
 
-                />
+                    <YoutubePlayer
+                        height={windowWidth}
+                        videoId={item.link_youtube}
+
+                    />
+                }
+
             </ScrollView>
             {user.level == 'Petugas' && <TouchableOpacity onPress={() => Alert.alert(MYAPP, 'Apakah kamu yakin akan hapus ini ?', [
                 { text: 'Tidak' },

@@ -1,8 +1,8 @@
-import { Alert, FlatList, Image, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { Alert, FlatList, Image, Linking, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { useIsFocused } from '@react-navigation/native';
 import axios from 'axios';
-import { apiURL, getData, MYAPP } from '../../utils/localStorage';
+import { apiURL, getData, MYAPP, webURL } from '../../utils/localStorage';
 import { Color, colors, fonts } from '../../utils';
 import { MyGap, MyHeader, MyLoading } from '../../components';
 import { Icon } from 'react-native-elements';
@@ -202,6 +202,8 @@ export default function Anak({ navigation, route }) {
                                                 </TouchableOpacity>
                                             </>
                                         }
+
+
                                     </View>
 
 
@@ -224,6 +226,32 @@ export default function Anak({ navigation, route }) {
             }}>
                 <Icon type='ionicon' name='add' color={colors.white} />
             </TouchableOpacity>
+            }
+
+            {
+                data.length > 0 &&
+
+
+                <TouchableOpacity onPress={() => {
+                    let URL = webURL + `anak?key=${key}`;
+                    Linking.openURL(URL);
+                }} style={{
+                    width: 80,
+                    height: 80,
+                    position: 'absolute',
+                    bottom: 80,
+                    right: 10,
+                    backgroundColor: colors.primary,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    borderRadius: 50
+                }}>
+                    <Icon type='ionicon' name='download' color={colors.white} />
+                    <Text style={{
+                        ...fonts.body3,
+                        color: colors.white
+                    }}>Export</Text>
+                </TouchableOpacity>
             }
         </SafeAreaView>
     )

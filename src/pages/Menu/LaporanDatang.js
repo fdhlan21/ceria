@@ -78,7 +78,7 @@ export default function laporanUkur({ navigation, route }) {
                                 flex: 1,
                                 paddingRight: 10,
                             }}>
-                                <MyCalendar onDateChange={x => setKirim({ ...kirim, awal: x })} value={kirim.awal} label="Sampai" />
+                                <MyCalendar onDateChange={x => setKirim({ ...kirim, akhir: x })} value={kirim.akhir} label="Sampai" />
                             </View>
                         </View>
                         <MyGap jarak={10} />
