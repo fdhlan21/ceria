@@ -71,12 +71,15 @@ export default function Splash({ navigation }) {
           resizeMode="contain"
           style={{
             transform: [{ scale: img }],
-            width: windowWidth / 1.5,
-            height: windowWidth / 1.5,
+            width: windowWidth / 2,
+            height: windowWidth / 2,
 
 
           }}
         />
+
+        <Text style={{ color: colors.secondary, ...fonts.headline0, marginTop: 10, }}>CERIA</Text>
+        <Text style={{ color: colors.primary, ...fonts.headline3 }}>Cegah Risiko Anak Stunting</Text>
 
         <MyLoading flex={0} />
 

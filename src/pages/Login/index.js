@@ -125,11 +125,14 @@ export default function Login({ navigation, route }) {
             }}>
               {/* FORM VIEW */}
               <Image source={require('../../assets/logo.png')} style={{
-                width: windowWidth,
-                height: 140,
+                width: 100,
+                height: 100,
                 resizeMode: 'contain',
-                alignSelf: 'center'
+                alignSelf: 'center',
+                marginBottom: 10
               }} />
+              <Text style={{ textAlign: 'center', ...fonts.headline0, color: colors.secondary, }}>CERIA</Text>
+              <Text style={{ textAlign: 'center', ...fonts.headline3, color: colors.primary, marginBottom: 10, }}>Cegah Risiko Anak Stunting</Text>
 
               <Image source={item.logo} style={{
                 width: 250,
@@ -137,6 +140,7 @@ export default function Login({ navigation, route }) {
                 resizeMode: 'contain',
                 alignSelf: 'center'
               }} />
+
 
               <Text style={{
                 ...fonts.headline2,

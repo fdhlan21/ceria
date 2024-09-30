@@ -164,8 +164,8 @@ export default function Home({ navigation, route }) {
               <Text style={{ ...fonts.subheadline3 }}>Cegah Risiko Anak Stunting</Text>
             </View>
             <Image style={{
-              width: 100,
-              height: 40,
+              width: 60,
+              height: 60,
               resizeMode: 'contain'
             }} source={require('../../assets/logo.png')} />
           </View>
@@ -183,6 +183,7 @@ export default function Home({ navigation, route }) {
                 resizeMode: 'contain'
               }} source={require('../../assets/slider.png')} />
               <View style={{
+                marginTop: 10,
                 flexDirection: 'row',
                 justifyContent: 'space-around',
                 marginBottom: 10,
@@ -238,7 +239,7 @@ export default function Home({ navigation, route }) {
             }
 
             {user.level !== 'Petugas' &&
-              <View>
+              <View >
                 <TouchableOpacity onPress={() => navigation.navigate('Anak')} style={{
 
                 }}>
@@ -271,6 +272,7 @@ export default function Home({ navigation, route }) {
                 return (
 
                   <View style={{
+
                     marginBottom: 10,
                     padding: 10,
                     backgroundColor: colors.primary,
